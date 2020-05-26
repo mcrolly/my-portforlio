@@ -1,2 +1,2 @@
-# my-portforlio
-This is a test portforlio build with ReactJs and aws
+# Test portforlio by Chinedum McRolly Nwangwu
+This is a test portfolio I built with ReactJS and AWS
