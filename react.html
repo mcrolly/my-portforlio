@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      .messageBox{
+        border: 1px solid;
+        margin:1em;
+        padding:2em;
+      }
+      .error{
+        border-color: red;
+        background-color: #eebbbb;
+      }
+      .success{
+        border-color: blue;
+        background-color: #bbbbee;
+      }
+      .hidden{
+        display:none;
+      }
+    </style>
+  </head>
+  <body>
+    <main id="content"></main>
+
+
+    <script src="https://unpkg.com/babel-standalone"></script>
+    <script type="text/javascript" src="https://unpkg.com/react@16.7.0/umd/react.production.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/react-dom@16.7.0/umd/react-dom.production.min.js"></script>
+
+    <script type="text/babel" data-presets="react">
+
+      class NameInput extends React.Component{
+        constructor(props){
+          super(props);
+          this.state ={
+            message:{
+              type: undefined,
+              body: undefined
+            }
+          }
+          this.buttonClicked = this.buttonClicked.bind(this);
+        }
+
+        buttonClicked(evt){
+            let name =  this.refs.NameInput.value;
+            this.setState({
+              message:{
+                type: name ? "success" : "error",
+                body: name ? "Welcome to React. "+ name : "You must enter a name"
+              }
+
+            })
+        }
+
+        render(){
+          let msg = this.state.message;
+          return(
+          <div>
+            <label> Name:
+            <input ref="NameInput" type="text" id="name"  /></label>
+            <button type="button" id="submit_info" onClick={this.buttonClicked}>Click Me!</button>
+            <MessageBox message={msg.body} type={msg.type}/>
+
+          </div>
+          )
+        }
+      }
+
+      class MessageBox extends React.Component{
+
+        render(){
+          return(
+            <div className={"messageBox " + (this.props.type || "hidden")}>
+
+              {this.props.message}
+            </div>
+          )
+        }
+      }
+
+
+
+
+      ReactDOM.render(<NameInput/>, document.getElementById('content'));
+
+    </script>
+
+
+  </body>
+</html>
