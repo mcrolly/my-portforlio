@@ -13,4 +13,3 @@ artifacts:
     - styles/*
     - images/*
     - dist/bundle.js
-    - babel.html
