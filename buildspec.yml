@@ -12,4 +12,4 @@ artifacts:
     - favicon.ico
     - styles/*
     - images/*
-    - distr/bundle.js
+    - dist/bundle.js
