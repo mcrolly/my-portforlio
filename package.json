@@ -6,6 +6,8 @@
   "scripts": {
     "jest": "jest --env=node",
     "test": "npm run jest",
+    "jest-watch": "jest --env=node --watch",
+    "test-watch": "npm run jest-watch",
     "webpack": "webpack",
     "webpack-watch": "webpack --watch"
   },
