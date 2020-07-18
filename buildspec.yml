@@ -15,3 +15,5 @@ artifacts:
     - styles/*
     - images/*
     - dist/bundle.js
+    - js/*
+    - __tests__/*
