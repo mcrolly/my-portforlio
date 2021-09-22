@@ -12,5 +12,5 @@ This is a test portfolio I built with ReactJS and AWS
 >  AWS Lambda
 >  AWS SNS
 > enzyme
-> jest
+> jest.
 
